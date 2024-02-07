@@ -2,120 +2,172 @@
 html{
     font-size: 16px;
 }
+
 body{
     width: 80%;
     margin: 0 auto 1rem;
     text-align: center;
     background-color: rgb(255, 228, 196);
+    border: 2px solid black;
+    border-radius: .5rem;
+    padding: .5rem;
 }
 
 .gallery{
     display: flex;
-    border: 2px solid black;
-    padding: 0rem;
-    border-radius: .5rem;
     flex-flow: column nowrap;
-    align-items: center;
+    flex: 1 1 0;
 }
 
-.top{
+/*responsive bars*/
+.bar{
+    width: 100%
+}
+
+/*header style*/
+.row1{
+    background-color: teal;
+    height: 2rem;
+    margin-bottom: .5rem;
+}
+
+/*5 pinks bars in column*/
+.row2{
     display: flex;
     flex-flow: column nowrap;
+    flex: 1 1 0;
 }
 
-.top > .bar {
+/*5 pink bars style*/
+.row2 > .bar{
     background-color: pink;
     height: 30px;
-    width: 40rem;
-    margin: .25rem 1rem .25rem 1rem;
-
+    margin-bottom: .5rem;
 }
 
-.middle{
-    display: flex;
-}
-
-.bottom{
+.row3{
     display: flex;
     flex-flow: column nowrap;
 }
 
-.head{
-    background-color: rgb(0, 210, 144) ;
-    margin: 1rem 2rem 1rem 2rem;
-    width: 40rem;
-    height: 2rem;
+/*large blue box style*/
+.row3 > .col1{
+    background-color: teal;
+    height: 200px;
+    margin-bottom: .5rem;
 }
 
-.foot{
-    background-color: rgb(0, 210, 144);
-    margin: 1rem 2rem 1rem 2rem;
-    width: 40rem;
-    height: 2rem;
+/*4 pinks bars and blue box display inline row*/
+.row3 > .col2col3{
+    display: flex;
+    flex-direction: row;
+    flex: 1 1 0;
+    gap: .5rem;
 }
 
+.row3 > .col2col3 > .col2{
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 50px;
+}
 
+/*pink bars stack in column*/
+.row3 > .col2col3 > .col2 > .col2left{
+    flex-direction: column;
+    flex: 1 1 0;
+}
 
-.block{
+.row3 > .col2col3 > .col2 > .col2right{
+    flex-direction: column;
+    flex: 1 1 0;
+}
+
+/*2 pink bars style*/
+.row3 > .col2col3 > .col2 > .col2left > .bar{
     background-color: pink;
-    width: 250px;
     height: 30px;
-    margin: .5rem 0;
+    margin-bottom: .5rem;
 }
 
-.bluebox1{
-    width: 40rem;
-    height: 20rem;
-    background-color: rgb(0, 210, 144);
-    margin: 1rem;
+.row3 > .col2col3 > .col2 > .col2right > .bar{
+    background-color: pink;
+    height: 30px;
+    margin-bottom: .5rem;
 }
 
-
-
-.bluebox2{
-    width: 250px;
-    height: 184px;
-    background-color: rgb(0, 210, 144);
+/*smaller blue box style*/
+.row3 > .col2col3 > .col3{
+    background-color: teal;
+    flex: 1 1 0;
+    margin-bottom: .5rem;
 }
 
-
-.col1{
-    display: flex;
-    flex-flow: column nowrap;
-    margin: .25rem;
+/*footer style*/
+.row4{
+    background-color: teal;
+    height: 2rem;
+    margin-bottom: .5rem;
 }
 
-/*.col2{
-    margin: .25rem;
-}*/
-
-.newcol1{
-    display: flex;
-    flex-flow: column nowrap;
-}
-
-.newcol2{
-    display: flex;
-    flex-flow: column nowrap;
-}
-
-
-
-@media all and (min-width: 800px){
-    .top{
-        flex-direction: row;
+/*for smartphone screens*/
+@media all and (min-width: 576px) and (max-width: 800px){
+    /*pink bars in line*/
+    .row2{
+        flex-flow: row nowrap;
+        gap: .5rem;
     }
-    .top > .bar{
-        height: 30px;
-        width: 100px;
+    
+    /*4 blocks in 2 columns*/
+    .row3 > .col2col3 > .col2{
+        flex-direction: row;
+        gap: .5rem;
+    }
+}
+
+
+/*for desktop screens*/
+@media all and (min-width: 801px){
+    
+    /*pink bars in line*/
+    .row2{
+        flex-flow: row nowrap;
+        gap: .5rem;
     }
 
-    /*.newcol1, .newcol2{
-        flex-direction: row;
-        
-    }*/
-}
+    /*pinks bars smaller*/
+    .row2 > .bar{
+        height: 20px;
+    }
 
-@media (min-width: 800px){
+    /*4 blocks in 2 columns*/
+    .row3 > .col2col3 > .col2{
+        flex-direction: row;
+        gap: .5rem;
+    }
+    
+    .row3{
+        flex-direction: row;
+        flex-wrap: nowrap;
+        gap: .5rem;
+    }
+
+    .row3 > .col1{
+        flex: 1 1 0;
+    }
+
+    /*blue box on top on pink boxes*/
+    .row3 > .col2col3{
+        flex: 1 1 0;
+        flex-direction: column-reverse;
+    }
+
+    /*4 pink boxes take up more space in container*/
+    .row3 > .col2col3 > .col2 > .col2left > .bar{
+        height: 50px;
+    }
+    
+    .row3 > .col2col3 > .col2 > .col2right > .bar{
+        height: 50px;
+    }
 
 }

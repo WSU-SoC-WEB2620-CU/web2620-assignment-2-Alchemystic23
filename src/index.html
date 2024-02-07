@@ -11,13 +11,16 @@
 <body>
 <h1>Flexbox Example A02</h1>
 
-/*main container*/
+<!-- main container -->
 <main class="gallery">
 
+<!-- header -->
+<div class="row1">
+   <div class="bar"></div>
+</div>
 
-   <div class="head"></div>
-
-   <div class="top">
+<!-- 5 pink bars -->
+   <div class="row2">
         <div class="bar"></div>
         <div class="bar"></div>
         <div class="bar"></div>
@@ -25,33 +28,39 @@
         <div class="bar"></div>
    </div>
 
-   <div class="middle">
-        <div class="bluebox1"></div>
-   </div>
+<!-- large blue box, 4 pink bars, small blue box -->
+<div class="row3">
 
-   <div class="bottom">
+        <div class="col1">
+          <div class="bar"></div>
+        </div>
+        
+        <div class="col2col3">
+          <div class="col2">
+          <div class="col2left">
+            <div class="bar"></div>
+            <div class="bar"></div>
+          </div>
 
-      <div class="col1">
-        <div class="newcol1">
-          <div class="block"></div>
-          <div class="block"></div>
+          <div class="col2right">
+            <div class="bar"></div>
+            <div class="bar"></div>
+          </div>
         </div>
 
-        <div class="newcol2"></div>
-          <div class="block"></div>
-          <div class="block"></div>
+          <div class="col3">
+            <div class="bar"></div>
+          </div>
+
         </div>
-      </div>
 
-      <div class="col2">
-        <div class="bluebox2"></div>
-    </div>
-
-      
+  </div>
 
 
-   
-  <div class="foot"></div>
+<!-- footer -->
+<div class="row4">
+  <div class="bar"></div>
+</div>
 
 
 </main>
